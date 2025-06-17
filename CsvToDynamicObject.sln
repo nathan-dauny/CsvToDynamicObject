@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31903.59
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CsvToDynamicObjectLib", "CsvToDynamicObjectLib\CsvToDynamicObjectLib.csproj", "{CC9182D1-3686-4A53-92F5-7863F16D81F3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CsvToDynamicObjectDemo", "CsvToDynamicObjectDemo\CsvToDynamicObjectDemo.csproj", "{DDAAF6FD-E3C1-410F-8609-4A31D2395856}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{CC9182D1-3686-4A53-92F5-7863F16D81F3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CC9182D1-3686-4A53-92F5-7863F16D81F3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CC9182D1-3686-4A53-92F5-7863F16D81F3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CC9182D1-3686-4A53-92F5-7863F16D81F3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DDAAF6FD-E3C1-410F-8609-4A31D2395856}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DDAAF6FD-E3C1-410F-8609-4A31D2395856}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DDAAF6FD-E3C1-410F-8609-4A31D2395856}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DDAAF6FD-E3C1-410F-8609-4A31D2395856}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
