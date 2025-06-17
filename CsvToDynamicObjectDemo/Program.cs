@@ -1,4 +1,5 @@
-﻿using CSVtoDynamicObjectLib;
+﻿using CsvToDynamicObjectLib;
+using CSVtoDynamicObjectLib;
 
 namespace CSVtoObject
 {
@@ -14,15 +15,23 @@ namespace CSVtoObject
             }
             using var fileStream = File.OpenRead(filePath);
 
-            var processor = new CsvProcessor();
-            processor.LoadCsv(fileStream);
+            //var processor = new CsvFinalObject();
+            //processor.LoadCsv(fileStream);
 
-            Console.WriteLine("Colonnes et types détectés :");
-            foreach (var colType in processor.ColumnTypes)
+            var reader = new CsvReader();
+            var csvRead = reader.ReadCsv(fileStream);
+            var columnstype = new ColumnsType();
+            var columnstypeDico = columnstype.GetAllColumnsTypes(csvRead);
+            var csvTyped = new CsvTyped();
+            var csvTypedFields = csvTyped.GetFieldsTyped(columnstypeDico,csvRead);
+            var csvFinalObject2 = new CsvFinalObject2(csvTypedFields);
+
+            Console.WriteLine("Columns Type detected :");
+            foreach (var colType in columnstypeDico)
                 Console.WriteLine($"{colType.Key} : {colType.Value.Name}");
 
-            Console.WriteLine("\nLignes typées :");
-            foreach (var row in processor.Rows)
+            Console.WriteLine("\nTyped Lines :");
+            foreach (var row in csvFinalObject2)
                 Console.WriteLine(row);
         }
     }

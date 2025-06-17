@@ -4,23 +4,40 @@ using CSVtoObject;
 
 namespace CSVtoDynamicObjectLib
 {
-    public class CsvProcessor
+    /// <summary>
+    /// Processes CSV data streams and converts them into typed dynamic objects.
+    /// </summary>
+    public class CsvFinalObject
     {
-        public List<FinalObject> Rows { get; private set; }
+        /// <summary>
+        /// Gets the list of parsed CSV rows represented as <see cref="CsvLine"/> instances.
+        /// </summary>
+        public List<CsvLine> Rows { get; private set; }
+
+        /// <summary>
+        /// Gets the detected data types for each CSV column.
+        /// </summary>
         public Dictionary<string, Type> ColumnTypes { get; private set; }
 
-        public CsvProcessor()
+        /// <summary>
+        /// Initializes a new instance of the <see cref="CsvFinalObject"/> class.
+        /// </summary>
+        public CsvFinalObject()
         {
-            Rows = new List<FinalObject>();
+            Rows = new List<CsvLine>();
             ColumnTypes = new Dictionary<string, Type>();
         }
 
+        /// <summary>
+        /// Loads and parses CSV data from a stream, detecting column types and converting values accordingly.
+        /// </summary>
+        /// <param name="csvStream">The stream containing the CSV data.</param>
         public void LoadCsv(Stream csvStream)
         {
             List<Dictionary<string, string>> rawRows = new List<Dictionary<string, string>>();
 
             using (var reader = new StreamReader(csvStream))
-            using (var csv = new CsvReader(reader, CultureInfo.InvariantCulture))
+            using (var csv = new CsvHelper.CsvReader(reader, CultureInfo.InvariantCulture))
             {
                 var records = csv.GetRecords<dynamic>();
                 foreach (var record in records)
@@ -36,7 +53,7 @@ namespace CSVtoDynamicObjectLib
             if (!rawRows.Any())
                 return;
 
-            // Détecter les types par colonne
+            // Detect column types
             var columns = rawRows.First().Keys;
             foreach (var col in columns)
             {
@@ -45,7 +62,7 @@ namespace CSVtoDynamicObjectLib
                 ColumnTypes[col] = detectedType;
             }
 
-            // Convertir les valeurs dans le type détecté
+            // Convert values to detected types and store as FinalObject instances
             foreach (var rawRow in rawRows)
             {
                 var typedFields = new Dictionary<string, object>();
@@ -55,7 +72,7 @@ namespace CSVtoDynamicObjectLib
                     var type = ColumnTypes[col];
                     typedFields[col] = CsvTypeDetector.ConvertToType(val, type);
                 }
-                Rows.Add(new FinalObject(typedFields));
+                Rows.Add(new CsvLine(typedFields));
             }
         }
     }
