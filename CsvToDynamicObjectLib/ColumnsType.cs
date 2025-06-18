@@ -15,7 +15,7 @@ namespace CsvToDynamicObjectLib
         public Dictionary<string, Type> GetAllColumnsTypes(List<Dictionary<string, string>> csvParsed)
         {
             // Initialize the result dictionary that will hold column names and their detected types
-            Dictionary<string, Type> ColumnTypes = new Dictionary<string, Type>();
+            Dictionary<string, Type> ColumnTypesDico = new Dictionary<string, Type>();
 
             // Extract the column names from the first row
             var columnsName = csvParsed.First().Keys;
@@ -29,9 +29,9 @@ namespace CsvToDynamicObjectLib
                 var detectedType = CsvTypeDetector.DetectColumnType(colValues);
 
                 // Store the detected type for the column
-                ColumnTypes[col] = detectedType;
+                ColumnTypesDico[col] = detectedType;
             }
-            return ColumnTypes;
+            return ColumnTypesDico;
         }
     }
 }
