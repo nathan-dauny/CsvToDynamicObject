@@ -1,10 +1,12 @@
-﻿namespace CSVtoObject
+﻿using System.Collections;
+
+namespace CSVtoObject
 {
     /// <summary>
     /// This Object represent a Csv line as a Dictionnary
     /// (Key = field column, Value = field value)
     /// </summary>
-    public class CsvLine
+    public class CsvLine : IEnumerable<KeyValuePair<string, object>>
     {
         /// <summary>
         /// Dictionary containing the key-value pairs representing the CSV fields.
@@ -43,5 +45,7 @@
             return string.Join(", ", Fields.Select(kvp => $"{kvp.Key}={kvp.Value}"));
 
         }
+        public IEnumerator<KeyValuePair<string, object>> GetEnumerator() => Fields.GetEnumerator();
+        IEnumerator IEnumerable.GetEnumerator() => GetEnumerator();
     }
 }
