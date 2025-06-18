@@ -26,6 +26,12 @@
 
 ---
 
+## 📦 Packages Used
+
+- 📂 CsvHelper — Robust CSV parsing library supporting dynamic and strongly-typed records  
+
+---
+
 ## ⚙️ Getting Started
 
 ### Clone and build
