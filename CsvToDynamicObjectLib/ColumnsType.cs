@@ -1,0 +1,37 @@
+﻿using CSVtoObject;
+
+namespace CsvToDynamicObjectLib
+{
+    /// <summary>
+    /// Responsible for detecting the data types of columns in a parsed CSV input.
+    /// </summary>
+    public class ColumnsType
+    {
+        /// <summary>
+        /// Analyzes the parsed CSV rows and determines the most appropriate .NET type for each column.
+        /// </summary>
+        /// <param name="csvParsed">A list of dictionaries representing CSV rows (each row is a dictionary of column name to raw string value).</param>
+        /// <returns>A dictionary mapping each column name to its inferred data type.</returns>
+        public Dictionary<string, Type> GetAllColumnsTypes(List<Dictionary<string, string>> csvParsed)
+        {
+            // Initialize the result dictionary that will hold column names and their detected types
+            Dictionary<string, Type> ColumnTypes = new Dictionary<string, Type>();
+
+            // Extract the column names from the first row
+            var columnsName = csvParsed.First().Keys;
+
+            // For each column, detect the most likely type based on the column's values
+            foreach (var col in columnsName)
+            {
+                // Extract all values for the current column
+                var colValues = csvParsed.Select(r => r[col]);
+
+                var detectedType = CsvTypeDetector.DetectColumnType(colValues);
+
+                // Store the detected type for the column
+                ColumnTypes[col] = detectedType;
+            }
+            return ColumnTypes;
+        }
+    }
+}

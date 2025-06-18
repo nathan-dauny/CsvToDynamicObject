@@ -2,6 +2,9 @@
 
 namespace CSVtoObject
 {
+    /// <summary>
+    /// Provides methods to detect the data type of CSV columns and convert string values accordingly.
+    /// </summary>
     public static class CsvTypeDetector
     {
         private static readonly Type[] CandidateTypes = new Type[]
@@ -13,31 +16,42 @@ namespace CSVtoObject
             typeof(string)
         };
 
-        public static Type DetectColumnType(IEnumerable<string> values)
+        /// <summary>
+        /// Detects the most appropriate data type for a CSV column based on its values.
+        /// </summary>
+        /// <param name="valuesOfAColumn">The collection of string values from the column.</param>
+        /// <returns>The detected <see cref="Type"/> for the column, defaulting to <see cref="string"/> if none match.</returns>
+        public static Type DetectColumnType(IEnumerable<string> valuesOfAColumn)
         {
             foreach (var type in CandidateTypes)
             {
                 if (type == typeof(string))
                     continue;
 
-                if (values.All(val => string.IsNullOrWhiteSpace(val) || TryConvert(val, type)))
+                if (valuesOfAColumn.All(v => string.IsNullOrWhiteSpace(v) || TryConvert(v, type)))
                     return type;
             }
             return typeof(string);
         }
 
-        private static bool TryConvert(string val, Type type)
+        /// <summary>
+        /// Attempts to convert a string value to the specified type.
+        /// </summary>
+        /// <param name="valueField">The string value to convert.</param>
+        /// <param name="type">The target <see cref="Type"/> to convert to.</param>
+        /// <returns>True if conversion is successful; otherwise, false.</returns>
+        private static bool TryConvert(string valueField, Type type)
         {
             try
             {
                 if (type == typeof(int))
-                    int.Parse(val, NumberStyles.Integer, CultureInfo.InvariantCulture);
+                    int.Parse(valueField, NumberStyles.Integer, CultureInfo.InvariantCulture);
                 else if (type == typeof(double))
-                    double.Parse(val, NumberStyles.Float | NumberStyles.AllowThousands, CultureInfo.InvariantCulture);
+                    double.Parse(valueField, NumberStyles.Float | NumberStyles.AllowThousands, CultureInfo.InvariantCulture);
                 else if (type == typeof(bool))
-                    bool.Parse(val);
+                    bool.Parse(valueField);
                 else if (type == typeof(DateTime))
-                    DateTime.Parse(val, CultureInfo.InvariantCulture);
+                    DateTime.Parse(valueField, CultureInfo.InvariantCulture);
                 else
                     return false;
 
@@ -49,6 +63,12 @@ namespace CSVtoObject
             }
         }
 
+        /// <summary>
+        /// Converts a string value to the specified type, returning the original string if conversion fails.
+        /// </summary>
+        /// <param name="val">The string value to convert.</param>
+        /// <param name="type">The target <see cref="Type"/> to convert to.</param>
+        /// <returns>The converted value as an <see cref="object"/>, or the original string if conversion fails.</returns>
         public static object ConvertToType(string val, Type type)
         {
             if (string.IsNullOrWhiteSpace(val))

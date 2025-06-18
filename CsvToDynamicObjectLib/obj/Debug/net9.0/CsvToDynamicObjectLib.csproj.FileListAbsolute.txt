@@ -10,3 +10,4 @@ C:\Users\anous\Desktop\Applications dev\CsvToDynamicObject\CsvToDynamicObjectLib
 C:\Users\anous\Desktop\Applications dev\CsvToDynamicObject\CsvToDynamicObjectLib\obj\Debug\net9.0\refint\CsvToDynamicObjectLib.dll
 C:\Users\anous\Desktop\Applications dev\CsvToDynamicObject\CsvToDynamicObjectLib\obj\Debug\net9.0\CsvToDynamicObjectLib.pdb
 C:\Users\anous\Desktop\Applications dev\CsvToDynamicObject\CsvToDynamicObjectLib\obj\Debug\net9.0\ref\CsvToDynamicObjectLib.dll
+C:\Users\anous\Desktop\Applications dev\CsvToDynamicObject\CsvToDynamicObjectLib\obj\Debug\net9.0\CsvToDynamicObjectLib.sourcelink.json

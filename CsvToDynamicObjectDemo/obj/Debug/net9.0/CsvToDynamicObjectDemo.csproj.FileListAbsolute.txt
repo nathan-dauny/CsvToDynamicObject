@@ -18,3 +18,4 @@ C:\Users\anous\Desktop\Applications dev\CsvToDynamicObject\CsvToDynamicObjectDem
 C:\Users\anous\Desktop\Applications dev\CsvToDynamicObject\CsvToDynamicObjectDemo\obj\Debug\net9.0\CsvToDynamicObjectDemo.genruntimeconfig.cache
 C:\Users\anous\Desktop\Applications dev\CsvToDynamicObject\CsvToDynamicObjectDemo\obj\Debug\net9.0\ref\CsvToDynamicObjectDemo.dll
 C:\Users\anous\Desktop\Applications dev\CsvToDynamicObject\CsvToDynamicObjectDemo\bin\Debug\net9.0\inputs\example1.csv
+C:\Users\anous\Desktop\Applications dev\CsvToDynamicObject\CsvToDynamicObjectDemo\obj\Debug\net9.0\CsvToDynamicObjectDemo.sourcelink.json
