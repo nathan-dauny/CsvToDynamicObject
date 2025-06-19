@@ -1,6 +1,6 @@
 ﻿using System.Globalization;
 
-namespace CSVtoObject
+namespace CsvToDynamicObjectLib
 {
     /// <summary>
     /// Provides methods to detect the data type of CSV columns and convert string values accordingly.

@@ -1,6 +1,6 @@
 ﻿using System.Collections;
 
-namespace CSVtoObject
+namespace CsvToDynamicObjectLib
 {
     /// <summary>
     /// This Object represent a Csv line as a Dictionnary

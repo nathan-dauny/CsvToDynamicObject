@@ -1,9 +1,8 @@
 ﻿using System.Collections.Generic;
 using System.Text;
 using CsvToDynamicObjectLib;
-using CSVtoDynamicObjectLib;
 
-namespace CSVtoObject
+namespace CsvToDynamicObject
 {
     class Program
     {
@@ -53,13 +52,13 @@ namespace CSVtoObject
             {
                 Console.WriteLine(insertQuery);
             }
-            //Console.WriteLine("Columns Type detected :");
-            //foreach (var colType in columnstypeDico)
-            //    Console.WriteLine($"{colType.Key} : {colType.Value.Name}");
+            Console.WriteLine("Columns Type detected :");
+            foreach (var colType in columnstypeDico)
+                Console.WriteLine($"{colType.Key} : {colType.Value.Name}");
 
-            //Console.WriteLine("\nTyped Lines :");
-            //foreach (var row in csvFinalObject)
-            //    Console.WriteLine(row);
+            Console.WriteLine("\nTyped Lines :");
+            foreach (var row in csvFinalObject)
+                Console.WriteLine(row);
         }
     }
 }
