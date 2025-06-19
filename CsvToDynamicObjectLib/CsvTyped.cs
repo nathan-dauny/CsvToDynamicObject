@@ -1,6 +1,4 @@
-﻿using CSVtoObject;
-
-namespace CsvToDynamicObjectLib
+﻿namespace CsvToDynamicObjectLib
 {
     public class CsvTyped
     {

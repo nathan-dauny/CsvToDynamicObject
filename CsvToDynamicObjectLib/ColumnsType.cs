@@ -1,6 +1,4 @@
-﻿using CSVtoObject;
-
-namespace CsvToDynamicObjectLib
+﻿namespace CsvToDynamicObjectLib
 {
     /// <summary>
     /// Responsible for detecting the data types of columns in a parsed CSV input.
@@ -14,10 +12,7 @@ namespace CsvToDynamicObjectLib
         /// <returns>A dictionary mapping each column name to its inferred data type.</returns>
         public Dictionary<string, Type> GetAllColumnsTypes(List<Dictionary<string, string>> csvParsed)
         {
-            // Initialize the result dictionary that will hold column names and their detected types
             Dictionary<string, Type> ColumnTypesDico = new Dictionary<string, Type>();
-
-            // Extract the column names from the first row
             var columnsName = csvParsed.First().Keys;
 
             // For each column, detect the most likely type based on the column's values

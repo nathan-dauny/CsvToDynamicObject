@@ -1,6 +1,6 @@
 ﻿using System.Globalization;
 
-namespace CSVtoDynamicObjectLib
+namespace CsvToDynamicObjectLib
 {
     /// <summary>
     /// Responsible for reading CSV data from a stream

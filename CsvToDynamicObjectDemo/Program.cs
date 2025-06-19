@@ -1,9 +1,8 @@
 ﻿using System.Collections.Generic;
 using System.Text;
 using CsvToDynamicObjectLib;
-using CSVtoDynamicObjectLib;
 
-namespace CSVtoObject
+namespace CsvToDynamicObject
 {
     class Program
     {
