@@ -1,4 +1,4 @@
-﻿using System.Collections.Generic;
+﻿using System.Collections.Concurrent;
 using System.Text;
 using CsvToDynamicObjectLib;
 
@@ -16,20 +16,30 @@ namespace CsvToDynamicObject
             }
             using var fileStream = File.OpenRead(filePath);
             var reader = new CsvReaderConverter();
+
+            //List<Dictionary<string, string>> rows = ...;
             var csvRead = reader.ReadCsv(fileStream);
-            var columnstype = new ColumnsType();
-            var columnstypeDico = columnstype.GetAllColumnsTypes(csvRead);
+            var headers = csvRead.First().Select(kvp => kvp.Key).ToList();
+
+            var columnsTypeMULTITHREADING = new ColumnsTypeMULTITHREADING();
+            var columnstypeDico = columnsTypeMULTITHREADING.GetAllColumnsTypesMULTITHREADING(csvRead);
             var csvTyped = new CsvTyped();
             var csvTypedFields = csvTyped.GetFieldsTyped(columnstypeDico,csvRead);
             var csvFinalObject = new CsvFinalObject(csvTypedFields);
 
             List<string> insertQueries = new List<string>();
-
+            var test = csvFinalObject.First().Select(kvp=>kvp.Key).ToList();
             var firstPartInsertQuery = new StringBuilder();
             firstPartInsertQuery.Append("INSERT INTO table (");
-            foreach (var kvp in columnstypeDico)
+
+            //foreach (var kvp in columnstypeDico)
+            //{
+            //    firstPartInsertQuery.Append(kvp.Key)
+            //        .Append(',');
+            //}
+            foreach (var k in test)
             {
-                firstPartInsertQuery.Append(kvp.Key)
+                firstPartInsertQuery.Append(k)
                     .Append(',');
             }
             firstPartInsertQuery.Length--;
