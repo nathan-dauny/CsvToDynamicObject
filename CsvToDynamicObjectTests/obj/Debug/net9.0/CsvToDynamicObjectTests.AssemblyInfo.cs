@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("CsvToDynamicObjectTests")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+865e7b6b162f8e265f36aaf6da3bf235071816f2")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+6b62c6225068fc2e278c0c70978189ce8d43e41e")]
 [assembly: System.Reflection.AssemblyProductAttribute("CsvToDynamicObjectTests")]
 [assembly: System.Reflection.AssemblyTitleAttribute("CsvToDynamicObjectTests")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

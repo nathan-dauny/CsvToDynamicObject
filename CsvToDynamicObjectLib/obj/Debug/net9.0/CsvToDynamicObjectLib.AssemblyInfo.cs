@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("CsvToDynamicObjectLib")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+aeec523066051e1ba48e8178649ec9700e78591e")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+6b62c6225068fc2e278c0c70978189ce8d43e41e")]
 [assembly: System.Reflection.AssemblyProductAttribute("CsvToDynamicObjectLib")]
 [assembly: System.Reflection.AssemblyTitleAttribute("CsvToDynamicObjectLib")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

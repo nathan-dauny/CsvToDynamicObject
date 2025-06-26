@@ -17,8 +17,9 @@ namespace CsvToDynamicObject
             using var fileStream = File.OpenRead(filePath);
             var reader = new CsvReaderConverter();
 
+            var streamReader = new StreamReader(fileStream);
             //List<Dictionary<string, string>> rows = ...;
-            var csvRead = reader.ReadCsv(fileStream);
+            var csvRead = reader.ReadCsv(streamReader);
             var headers = csvRead.First().Select(kvp => kvp.Key).ToList();
 
             var columnsTypeMULTITHREADING = new ColumnsTypeMULTITHREADING();

@@ -19,12 +19,16 @@ namespace CsvToDynamicObjectLib
         /// <returns>A list of dictionaries, each representing a CSV row.</returns>
         public List<Dictionary<string, string>> ReadCsv(Stream csvStream)
         {
+            // Use StreamReader to read the CSV content from the stream
+            using var reader = new StreamReader(csvStream);
+            return ReadCsv(reader);
+        }
+        public List<Dictionary<string, string>> ReadCsv(StreamReader csvStream)
+        {
             var rows = new List<Dictionary<string, string>>();
 
-            // Use StreamReader to read the CSV content from the stream
-            using (var reader = new StreamReader(csvStream))
             // Create a CsvReader instance from the CsvHelper library with invariant culture (standard formatting)
-            using (var csv = new CsvHelper.CsvReader(reader, CultureInfo.InvariantCulture))
+            using (var csv = new CsvHelper.CsvReader(csvStream, CultureInfo.InvariantCulture))
             {
                 // Read all records as dynamic objects
                 var records = csv.GetRecords<dynamic>();
