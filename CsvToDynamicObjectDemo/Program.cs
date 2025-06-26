@@ -1,6 +1,7 @@
 ﻿using System.Collections.Concurrent;
 using System.Text;
 using CsvToDynamicObjectLib;
+using static System.Runtime.InteropServices.JavaScript.JSType;
 
 namespace CsvToDynamicObject
 {
@@ -18,26 +19,13 @@ namespace CsvToDynamicObject
             var reader = new CsvReaderConverter();
 
             var streamReader = new StreamReader(fileStream);
-            //List<Dictionary<string, string>> rows = ...;
-            var csvRead = reader.ReadCsv(streamReader);
-            var headers = csvRead.First().Select(kvp => kvp.Key).ToList();
-
-            var columnsTypeMULTITHREADING = new ColumnsTypeMULTITHREADING();
-            var columnstypeDico = columnsTypeMULTITHREADING.GetAllColumnsTypesMULTITHREADING(csvRead);
-            var csvTyped = new CsvTyped();
-            var csvTypedFields = csvTyped.GetFieldsTyped(columnstypeDico,csvRead);
-            var csvFinalObject = new CsvFinalObject(csvTypedFields);
+            var (csvFinalObject, columnstypeDico) = ReturnObject.GetObjectsCSV(streamReader);
 
             List<string> insertQueries = new List<string>();
             var test = csvFinalObject.First().Select(kvp=>kvp.Key).ToList();
             var firstPartInsertQuery = new StringBuilder();
             firstPartInsertQuery.Append("INSERT INTO table (");
 
-            //foreach (var kvp in columnstypeDico)
-            //{
-            //    firstPartInsertQuery.Append(kvp.Key)
-            //        .Append(',');
-            //}
             foreach (var k in test)
             {
                 firstPartInsertQuery.Append(k)

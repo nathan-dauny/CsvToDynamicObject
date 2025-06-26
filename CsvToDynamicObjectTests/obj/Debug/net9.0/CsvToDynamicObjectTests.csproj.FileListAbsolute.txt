@@ -9,6 +9,7 @@ C:\Users\anous\Desktop\Applications dev\CsvToDynamicObject\CsvToDynamicObjectTes
 C:\Users\anous\Desktop\Applications dev\CsvToDynamicObject\CsvToDynamicObjectTests\bin\Debug\net9.0\CsvToDynamicObjectTests.dll
 C:\Users\anous\Desktop\Applications dev\CsvToDynamicObject\CsvToDynamicObjectTests\bin\Debug\net9.0\CsvToDynamicObjectTests.pdb
 C:\Users\anous\Desktop\Applications dev\CsvToDynamicObject\CsvToDynamicObjectTests\bin\Debug\net9.0\CsvHelper.dll
+C:\Users\anous\Desktop\Applications dev\CsvToDynamicObject\CsvToDynamicObjectTests\bin\Debug\net9.0\FluentAssertions.dll
 C:\Users\anous\Desktop\Applications dev\CsvToDynamicObject\CsvToDynamicObjectTests\bin\Debug\net9.0\Microsoft.VisualStudio.CodeCoverage.Shim.dll
 C:\Users\anous\Desktop\Applications dev\CsvToDynamicObject\CsvToDynamicObjectTests\bin\Debug\net9.0\Microsoft.TestPlatform.CoreUtilities.dll
 C:\Users\anous\Desktop\Applications dev\CsvToDynamicObject\CsvToDynamicObjectTests\bin\Debug\net9.0\Microsoft.TestPlatform.PlatformAbstractions.dll
@@ -102,4 +103,3 @@ C:\Users\anous\Desktop\Applications dev\CsvToDynamicObject\CsvToDynamicObjectTes
 C:\Users\anous\Desktop\Applications dev\CsvToDynamicObject\CsvToDynamicObjectTests\obj\Debug\net9.0\CsvToDynamicObjectTests.pdb
 C:\Users\anous\Desktop\Applications dev\CsvToDynamicObject\CsvToDynamicObjectTests\obj\Debug\net9.0\CsvToDynamicObjectTests.genruntimeconfig.cache
 C:\Users\anous\Desktop\Applications dev\CsvToDynamicObject\CsvToDynamicObjectTests\obj\Debug\net9.0\ref\CsvToDynamicObjectTests.dll
-C:\Users\anous\Desktop\Applications dev\CsvToDynamicObject\CsvToDynamicObjectTests\bin\Debug\net9.0\FluentAssertions.dll

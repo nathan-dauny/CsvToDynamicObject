@@ -53,8 +53,8 @@ namespace CsvToDynamicObjectLib
                 else if (type == typeof(DateTime))
                     DateTime.Parse(valueField, CultureInfo.InvariantCulture);
                 else
-                    return false;
 
+                    return false;
                 return true;
             }
             catch
