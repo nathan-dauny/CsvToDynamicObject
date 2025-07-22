@@ -40,3 +40,24 @@
 git clone https://github.com/nathan-dauny/CsvToDynamicObject.git
 cd CsvToDynamicObject
 dotnet build
+
+
+## 📌 Usage in Code
+
+You can use the library in your own C# projects by referencing the `CsvToDynamicObjectLib` and calling a single method to parse a CSV stream:
+
+```csharp
+using CsvToDynamicObjectLib;
+using System.IO;
+
+// Assuming 'data' is a StreamReader instance pointing to a CSV file
+(CsvFinalObject CSV, Dictionary<string, Type> columnTypes) = ReturnObject.GetObjectsCSV(data);
+
+// Access the parsed rows as a list of dictionaries
+foreach (var row in CSV.Rows)
+{
+    foreach (var kvp in row)
+    {
+        Console.WriteLine($"{kvp.Key} ({columnTypes[kvp.Key]}): {kvp.Value}");
+    }
+}
