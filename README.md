@@ -53,8 +53,8 @@ using System.IO;
 // Assuming 'data' is a StreamReader instance pointing to a CSV file
 (CsvFinalObject CSV, Dictionary<string, Type> columnTypes) = ReturnObject.GetObjectsCSV(data);
 
-// Access the parsed rows as a list of dictionaries
-foreach (var row in CSV.Rows)
+// Access the parsed rows
+foreach (CsvLine row in CSV)
 {
     foreach (var kvp in row)
     {
